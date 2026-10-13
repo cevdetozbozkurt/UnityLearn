@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -29,7 +30,6 @@ public class PlayerController : MonoBehaviour
     {
         // Read the 2D vector from moveAction x : vertical, y : horizontal
         moveInput = moveAction.ReadValue<Vector2>();
-        
         // Move the vehicle forward/backward
         transform.Translate(Vector3.forward * Time.deltaTime * speed * moveInput.y);
         // Move the vehicle right/left
