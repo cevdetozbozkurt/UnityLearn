@@ -5,6 +5,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public Camera mainCamera;
+    public Camera hoodCamera;
+    public KeyCode switchKey;
+
     // Movement tuning (editable in inspector)
     public float speed = 10.0f;
     public float turnSpeed;
@@ -34,6 +38,12 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed * moveInput.y);
         // Move the vehicle right/left
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * moveInput.x);
+
+        if(Input.GetKeyDown(switchKey))
+        {
+            mainCamera.enabled = !mainCamera.enabled;
+            hoodCamera.enabled = !hoodCamera.enabled;
+        }
 
     }
 }

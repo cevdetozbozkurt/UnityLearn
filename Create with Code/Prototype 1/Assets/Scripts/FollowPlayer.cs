@@ -16,7 +16,7 @@ public class FollowPlayer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -25,4 +25,5 @@ public class FollowPlayer : MonoBehaviour
         // TO DO : Camera switch code will add
         transform.position = player.transform.position + cameraOffset;
     }
+
 }
